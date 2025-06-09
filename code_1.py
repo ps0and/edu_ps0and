@@ -12,7 +12,7 @@ import matplotlib.font_manager as fm
 import re
 
 # 나눔고딕 폰트 파일 경로 지정
-font_path = './font/NanumGothic.ttf'
+font_path = 'font/NanumGothic.ttf'
 
 # 폰트 이름 가져오기
 font_name = fm.FontProperties(fname=font_path).get_name()
