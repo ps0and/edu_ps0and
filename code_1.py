@@ -10,15 +10,17 @@ import pandas as pd
 import matplotlib
 import matplotlib.font_manager as fm
 import re
+import os
 
-# 나눔고딕 폰트 파일 경로 지정
-font_path = 'font/NanumGothic.ttf'
+# 폰트 파일 절대 경로 설정 (중요!)
+font_path = os.path.join(os.path.dirname(__file__), "font/NanumGothic.ttf")
 
-# 폰트 이름 가져오기
+# 시스템에 폰트 추가
+fm.fontManager.addfont(font_path)
 font_name = fm.FontProperties(fname=font_path).get_name()
 
-# matplotlib 전역 설정에 폰트 적용
-matplotlib.rc('font', family=font_name)
+# 전역 폰트 설정 적용
+matplotlib.rcParams['font.family'] = font_name
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="수학적 수열 예측기", layout="wide")
