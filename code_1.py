@@ -8,9 +8,17 @@ from tensorflow.keras.layers import Dense
 from tensorflow.keras.optimizers import Adam
 import pandas as pd
 import matplotlib
+import matplotlib.font_manager as fm
 import re
 
-matplotlib.rc('font', family='Malgun Gothic')
+# 나눔고딕 폰트 파일 경로 지정
+font_path = './font/NanumGothic.ttf'
+
+# 폰트 이름 가져오기
+font_name = fm.FontProperties(fname=font_path).get_name()
+
+# matplotlib 전역 설정에 폰트 적용
+matplotlib.rc('font', family=font_name)
 matplotlib.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="수학적 수열 예측기", layout="wide")
